@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#To apply the u+x permission to all files in the current directory
+chmod u+x *
+
+PS3="welcom To our DBMS: "
+
+select var in Create_Database List_Databases Use_Database Drop_Database Exit
+do
+    case $var in
+        "Create_Database")
+            . ./db_create
+            ;;
+        "List_Databases")
+            . ./dbs_list
+            ;;
+        "Use_Database")
+            . ./db_use
+            ;;
+        "Drop_Database")
+            . ./db_drop
+            ;;
+        "Exit")
+            echo "Exiting..."
+            break
+            ;;
+        *)
+            echo "Invalid option"
+            ;;
+    esac
+done
+

@@ -3,7 +3,7 @@
 #To apply the u+x permission to all files in the current directory
 chmod u+x *
 
-PS3="welcom To our DBMS: "
+PS3="DBMS-CLI> "
 
 select var in Create_Database List_Databases Use_Database Drop_Database Exit
 do

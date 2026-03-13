@@ -1,0 +1,39 @@
+#!/bin/bash
+PS3="[$1] SQL> "
+select var in Create_Table List_Tables Drop_Table Insert_into_Table Select_From_Table Delete_From_Table Update_Table Back_TO_mainMenu Exit
+do
+    case $var in
+        "Create_Table")
+            . ./createTable $1
+            ;;
+        "List_Tables")
+            . ./listTable $1
+            
+            ;;
+        "Drop_Table")
+            . ./dropTable $1
+            ;;
+        "Insert_into_Table")
+            . ./insertIntoTable $1
+            ;;
+        "Select_From_Table")
+            . ./selectTable $1
+            ;;
+        "Delete_From_Table")
+            . ./deleteFromTable $1
+            ;;
+        "Update_Table")
+            . ./updateTable $1
+            ;;
+        "Back_TO_mainMenu")
+            ./mainMenu
+            ;;
+        "Exit")
+            echo "Exiting..."
+            break
+            ;;
+        *)
+            echo "Invalid option"
+            ;;
+    esac
+done

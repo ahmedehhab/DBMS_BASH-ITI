@@ -1,0 +1,17 @@
+#! /bin/bash
+read -p "Enter the new database name: " DBName
+
+if [ -d ./dbs/$DBName ]; then
+    echo "Database $DBName already exists"
+    echo "--------------------------------------------"
+    ./mainMenu
+elif [[ $DBName =~ ^[a-zA-Z][a-zA-Z0-9_]*$ ]]; then
+    mkdir ./dbs/$DBName
+    echo "--------------------------------------------"
+    echo "Database $DBName has been created"
+    ./mainMenu
+else
+    echo "--------------------------------------------"
+    echo "Invalid DB Name!"
+    ./mainMenu
+fi

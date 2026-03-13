@@ -1,0 +1,14 @@
+#!/bin/bash
+
+read -p "Which database would you like to remove? " DBName
+
+if [ ! -d "./dbs/$DBName" ]; then
+    echo "$DBName Database does not exist!"
+    echo "---------------------------"
+    ./mainMenu
+else
+    rm -r "./dbs/$DBName"
+    echo "Database $DBName has been successfully deleted."
+    echo "--------------------------------------------"
+    ./mainMenu
+fi

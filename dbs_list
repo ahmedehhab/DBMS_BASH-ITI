@@ -1,0 +1,9 @@
+#! /bin/bash
+if [ "$(ls -A dbs)" ]; then
+        echo "Databases List"
+        ls dbs
+        ./mainMenu
+else 
+        echo "No Databases"
+fi
+

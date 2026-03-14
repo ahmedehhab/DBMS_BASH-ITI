@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# Check if the database directory has any files or directories inside it(not empty)
+if [ -n "$(ls dbs/$1)" ]; then
+    echo "+--------------------+"
+    echo "| Tables in $1"
+    echo "+--------------------+"
+    ls dbs/$1
+    echo "+--------------------+"
+else
+    echo "Empty set (No tables in $1)"
+fi
